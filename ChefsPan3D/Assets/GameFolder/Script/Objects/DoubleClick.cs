@@ -1,15 +1,8 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using DG.Tweening;
-using System;
-using System.Runtime.InteropServices.WindowsRuntime;
 
-public class DragDrop : MonoBehaviour
+public class DoubleClick : MonoBehaviour
 {
-    private Vector3 screenPoint;
-    private Vector3 offset;
-
     float timerForDoubleClick = 0.0f;
     float delay = 0.3f;
     bool isDoubleClick = false;
