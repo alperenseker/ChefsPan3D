@@ -133,7 +133,7 @@ public class GameManager : Singleton<GameManager>
         Question.Instance.GenerateRandom();
         LevelManager.Instance.SetLoadLevel();
         Timer.Instance.StartTimer();
-        AssetManager.Instance.Pan.GetComponent<ObjectType>().SetActive(true);
+        AssetManager.Instance.Pan.gameObject.SetActive(true);
         NewQuestion();
     }
     void HandleBonus()
@@ -171,6 +171,6 @@ public class GameManager : Singleton<GameManager>
         foreach (var _textMeshPro in TextMeshProS)
             _textMeshPro.gameObject.SetActive(isShow);
 
-        AssetManager.Instance.Pan.GetComponent<ObjectType>().SetActive(isShow);
+        AssetManager.Instance.Pan.gameObject.SetActive(isShow);
     }
 }

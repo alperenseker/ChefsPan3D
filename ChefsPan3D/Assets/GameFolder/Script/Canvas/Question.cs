@@ -53,6 +53,8 @@ public class Question : Singleton<Question>
         {
             ObjectType klon_obj = Instantiate(AssetManager.Instance.CollectibleObj[randomList[0]].GetComponent<ObjectType>());
             klon_obj._objectData.StartPosition = questionSlots[i].ObjectPoint.position;
+            klon_obj.gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+            klon_obj.GetComponent<Rigidbody>().isKinematic = true;
             klon_obj.SetTransform(); klon_obj.SetCollectible(false); klon_obj.gameObject.SetActive(true);
 
             QuestionObjTypes.Add(klon_obj); randomList.RemoveAt(0);

@@ -65,7 +65,8 @@ public class UIManager : Singleton<UIManager>
     public void StartWinGold() => StartCoroutine(StartGoldsMove());
     void InstantiateGolds()
     {
-        PanTransform = AssetManager.Instance.Pan.transform.position;
+        PanTransform = RectTransformUtility.WorldToScreenPoint(Camera.main, AssetManager.Instance.Pan.transform.GetChild(0).transform.position);
+
         for (int i = 0; i < 15; i++)
         {
             if(Golds2D.Count >= 15) { break; };

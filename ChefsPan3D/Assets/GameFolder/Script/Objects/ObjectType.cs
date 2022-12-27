@@ -14,9 +14,11 @@ public class ObjectType : MonoBehaviour
         public bool isCollectible;
     }
 
+    public Rigidbody Rigidbody() => GetComponent<Rigidbody>();
     private void Awake() => _objectData.isCollectible = true;
     public void SetActive(bool _active) => gameObject.SetActive(_active);
     public void SetCollectible(bool _active) => _objectData.isCollectible = _active;
+    public bool GetCollectible() => _objectData.isCollectible;
     public void SetTransform() => transform.position = _objectData.StartPosition;
     public void SetRotation() => transform.eulerAngles = _objectData.StartRotate;
 
