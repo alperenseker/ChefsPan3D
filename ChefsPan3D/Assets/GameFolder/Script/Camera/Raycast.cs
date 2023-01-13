@@ -19,7 +19,6 @@ public class Raycast : Singleton<Raycast>
         }
         if (Input.GetMouseButtonUp(0))
         {
-            DraggingFlag = false;
             AddForceObj();
             ClearObj();
         }
@@ -59,13 +58,15 @@ public class Raycast : Singleton<Raycast>
     void AddForceObj()
     {
         if (SelectedObj != null
-         && SelectedObj.GetCollectible())
+         && SelectedObj.GetCollectible() && DraggingFlag)
         {
             var mouseSpeed = Vector3.ClampMagnitude((StartPos - SelectedObj.transform.position), 400f);
             mouseSpeed.y = 0;
 
             SelectedObj.Rigidbody().AddForce(mouseSpeed * 250f * -1, ForceMode.Force);
         }
+
+        DraggingFlag = false;
 
     }
     void ClearObj() => SelectedObj = null;

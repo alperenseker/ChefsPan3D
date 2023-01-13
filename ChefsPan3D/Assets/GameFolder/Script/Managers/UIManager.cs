@@ -20,7 +20,7 @@ public class UIManager : Singleton<UIManager>
     public void Start() => InstantiateGolds();
     public void ShowSettingsPage()
     {
-        inGame.SetActive(false);
+        //inGame.SetActive(false);
         MenuPage.SetActive(false);
         ShopPage.SetActive(false);
         SettingsPage.SetActive(true);
@@ -29,7 +29,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void ShowShopPage()
     {
-        inGame.SetActive(false);
+        //inGame.SetActive(false);
         MenuPage.SetActive(false);
         ShopPage.SetActive(true);
         SettingsPage.SetActive(false);
@@ -47,7 +47,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void ShowMainMenu()
     {
-        inGame.SetActive(false);
+        //inGame.SetActive(false);
         MenuPage.SetActive(true);
         ShopPage.SetActive(false);
         SettingsPage.SetActive(false);
@@ -56,7 +56,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void ShowFinishPage(bool succes)
     {
-        inGame.SetActive(false);
+        //inGame.SetActive(false);
 
         if(succes)
             WinFinishPage.SetActive(true);
