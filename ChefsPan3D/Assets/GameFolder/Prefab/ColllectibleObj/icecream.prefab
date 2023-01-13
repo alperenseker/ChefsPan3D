@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2291841999974412949}
   - component: {fileID: 2291841999975411797}
   - component: {fileID: 2291841999977441335}
-  - component: {fileID: -1270084224262940396}
+  - component: {fileID: -3304168830247196943}
   - component: {fileID: -5826881045278242736}
   - component: {fileID: 2648251194713955232}
   m_Layer: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
     StartPosition: {x: 0, y: 0, z: 0}
     StartRotate: {x: 0, y: 0, z: 0}
     isCollectible: 0
---- !u!114 &-1270084224262940396
+--- !u!114 &-3304168830247196943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

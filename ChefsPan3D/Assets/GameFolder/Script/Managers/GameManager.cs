@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static GameManager;
 using static Question;
 
@@ -71,7 +72,7 @@ public class GameManager : Singleton<GameManager>
             NewQuestion(); TempCount = 0;
             UIManager.Instance.StartWinGold();
             SoundManager.Instance.PlaySound(0);
-            VibrationManager.Instance.VibrationWithDelay(50, .1f);
+            //VibrationManager.Instance.VibrationWithDelay(50, .1f);
         }
     }
     public void SetLevel(int level_index, bool add)

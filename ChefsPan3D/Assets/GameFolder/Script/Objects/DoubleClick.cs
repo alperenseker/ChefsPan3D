@@ -3,13 +3,27 @@ using DG.Tweening;
 
 public class DoubleClick : MonoBehaviour
 {
-    float timerForDoubleClick = 0.0f;
-    float delay = 0.3f;
-    bool isDoubleClick = false;
-
     ObjectType objectType;
-
     private void Awake() => objectType = GetComponent<ObjectType>();
+    public void StartMovement() => transform.DOMove(AssetManager.Instance.Pan.transform.position, 1f).SetEase(Ease.Linear)
+                            .OnComplete(() => transform.DOMoveY((transform.position.y - 1f), 0.2f).OnComplete(() => TrueFalse()));
+
+    void TrueFalse()
+    {
+        foreach (var _QuestionObj in Question.Instance.QuestionObjTypes)
+        {
+            if (_QuestionObj._objectData.WhichObj == objectType._objectData.WhichObj)
+            {
+                GameManager.Instance.TempTrueCount(true); return;
+            }
+        }
+
+        transform.DOMove(AssetManager.Instance.Pan.transform.position, 0.2f).SetEase(Ease.Linear)
+            .OnComplete(() => transform.DOMove(AssetManager.Instance.TrashPoint.transform.position, 1f).SetEase(Ease.Linear));
+    }
+
+
+    /*
     void Update()
     {
         if (isDoubleClick == true)
@@ -53,5 +67,5 @@ public class DoubleClick : MonoBehaviour
                     .OnComplete(() => transform.DOMoveY((transform.position.y - 1f), 0.2f).OnComplete(() => TrueFalse()));
             }
         }
-    }
+    }*/
 }

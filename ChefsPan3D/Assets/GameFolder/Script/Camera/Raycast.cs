@@ -19,7 +19,6 @@ public class Raycast : Singleton<Raycast>
         }
         if (Input.GetMouseButtonUp(0))
         {
-
             DraggingFlag = false;
             AddForceObj();
             ClearObj();
